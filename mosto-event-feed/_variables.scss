@@ -1,0 +1,60 @@
+$font: "Josefin Sans";
+$_font: "roboto";
+
+$spacer: 1rem;
+$bgcontainerW: 550px;
+$bgcontainerH: 550px;
+$bgraysW: 500px;
+$bgraysH: 500px;
+//$bp-sm: 768px;
+//$bp-md: 992px;
+//$bp-lg: 1200px;
+//-----------------------------------
+//sass list
+//$breakpoints: (768px, 992px, 1200px);
+//------------------------------------
+
+$breakpoints: (
+  "sm": 768px,
+  "md": 992px,
+  "lg": 1200px,
+);
+$colors: (
+  "_light": #fff,
+  "lightg": #eee,
+  "_dark": #333,
+  "oranges": #ff8a00,
+
+  "lightlavanda": #ccccff,
+  "bluelavanda": #8080ff,
+
+  "grape": #504c89,
+  "textblue": #4e5893,
+  "textlavanda": #8d8de0,
+  "deepviolet": #302d74,
+
+  "bluevioleta": #3333ff,
+  "pinkviolet": #9933ff,
+
+  "borderviolet": #d580fff5,
+  "borderlavanda": #b366fff7,
+  "borderbl": #9966ff,
+);
+$font-size: (
+  "_xsmall": 0.9rem,
+  "_small": 1.1rem,
+  "_normal": 1.25rem,
+  "_medium": 1.5rem,
+  "_large": 3.2rem,
+);
+$font-weight: (
+  "_xthin": 100,
+  "_thin": 300,
+  "_normal": 400,
+  "_normal2": 500,
+  "_bold": 600,
+  "_bolder": 700,
+);
+$avatar-size: 60px;
+$event-width: 300px;
+$event-height: 650px;

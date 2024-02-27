@@ -1,0 +1,179 @@
+@import "reboot";
+@import "variables";
+@import "events";
+@import "common";
+@import "rays";
+body {
+  font-family: $font;
+  font-family: $_font;
+}
+
+.ol {
+  margin-right: $spacer;
+  
+  ol {
+    width: $event-width;
+    height: $event-height;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    padding: $spacer * 3 0;
+
+    li {
+      background-color: map-get($colors, _light);
+      box-sizing: border-box;
+      padding: $spacer * 0.7 $spacer;
+      width: $event-width;
+      &::before {
+        content: "\f141";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        float: right;
+        font-size: 30px;
+        color: map-get($colors, lightlavanda);
+      }
+    }
+    h3 {
+      font-size: map-get($font-size, _small);
+      font-weight: map-get($font-weight, _normal);
+      display: inline-block;
+      margin: $spacer 0 0 $spacer;
+      color: map-get($colors, deepviolet);
+    }
+    p,
+    time {
+      font-size: map-get($font-size, _xsmall);
+      font-weight: map-get($font-weight, _normal);
+      margin: $spacer * 0.5;
+    }
+    p {
+      color: map-get($colors, textblue);
+      line-height: $spacer * 1.5;
+      font-size: map-get($font-size, _small);
+      font-weight: map-get($font-weight, _normal);
+    }
+    article {
+      display: flex;
+      flex-direction: column;
+    }
+    .avatar {
+      width: $avatar-size;
+      height: $avatar-size;
+      float: left;
+    }
+    time {
+      display: inline-block;
+      margin-left: $spacer;
+      color: map-get($colors, textlavanda);
+    }
+    .image {
+      width: 130%;
+      height: $event-width / 2;
+      transform: translateX($spacer);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      background-image: linear-gradient(
+        to bottom,
+        map-get($colors, borderlavanda),
+        map-get($colors, borderviolet)
+      );
+      width: $event-width + 14px;
+      height: $event-height + 17px;
+
+      border-radius: 1.7em;
+      position: absolute;
+      top: -10px;
+      left: -7px;
+      z-index: -2;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: linear-gradient(
+        to bottom,
+        map-get($colors, borderbl),
+        map-get($colors, borderviolet)
+      );
+      width: $event-width + 6px;
+      height: $event-height + 6px;
+
+      border-radius: 1.7em;
+      position: absolute;
+      top: -6px;
+      left: -3px;
+      z-index: -1;
+    }
+  }
+  li:nth-of-type(1) {
+    transform: translateX(-$spacer * 4);
+    box-shadow: -5px -5px 30px lighten(map-get($colors, grape), 20%);
+    animation: orizontal 2s linear infinite;
+  }
+  li:nth-of-type(2) {
+    transform: translateX($spacer * 4);
+    box-shadow: 5px 5px 30px lighten(map-get($colors, grape), 20%);
+    margin-top: $spacer * 3;
+    animation: vertical 2s linear infinite;
+    &::after {
+      display: inline-block;
+      content: "\2661  Liked by coco";
+      color: map-get($colors, deepviolet);
+      margin: $spacer * 1.5;
+      font-size: map-get($font-size, _small);
+    }
+  }
+  @keyframes orizontal {
+    0% {
+      transform: translateX(-$spacer * 4);
+    }
+    50% {
+      transform: translateX(-$spacer * 3);
+    }
+    100% {
+      transform: translateX(-$spacer * 4);
+    }
+  }
+  @keyframes vertical {
+    0% {
+      transform: translate($spacer * 4, $spacer);
+    }
+    50% {
+      transform: translate($spacer * 4, 0);
+    }
+    100% {
+      transform: translate($spacer * 4, $spacer);
+    }
+  }
+}
+
+.right-part {
+  display: flex;
+  flex-direction: column;
+  margin-left: $spacer;
+  padding: $spacer * 4 0;
+  h2 {
+    order: -1;
+    color: map-get($colors, oranges);
+    font-size: map-get($font-size, _medium);
+    font-weight: map-get($font-weight, _normal2);
+  }
+  h1 {
+    font-size: map-get($font-size, _large);
+    font-weight: map-get($font-weight, _bolder);
+    color: map-get($colors, deepviolet);
+    margin: 0;
+    line-height: $spacer * 4;
+  }
+  p {
+    font-size: map-get($font-size, _normal);
+    font-weight: map-get($font-weight, _xthin);
+    font-family: $_font;
+    color: map-get($colors, textblue);
+    line-height: $spacer * 1.8;
+  }
+  
+}

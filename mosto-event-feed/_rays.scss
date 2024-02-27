@@ -1,0 +1,79 @@
+@use "sass:map";
+body {
+  background-color: #222;
+}
+.bg-container {
+  position: relative;
+  width: $bgcontainerW;
+  height: $bgcontainerH;
+  border-radius: 100%;
+  transform: translateY(-110%);
+  z-index: -3;
+
+  &::before {
+    content: "";
+    display: block;
+    width: $bgraysW;
+    height: $bgraysH;
+    background-color: rgb(map-get($colors, lightlavanda), 60%);
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+/*.bg-rays {
+    &::before {
+      content: "";
+      display: block;
+      width: inherit;
+      height: inherit;
+  
+  
+      $background: null;
+      @for $n from 1 through 10 {
+        $background: $background,
+          linear-gradient(random() * 1turn, transparent 50%, green, transparent 50.5%);
+      }
+      background-image: $background;
+      background-repeat: no-repeat;
+    }
+  }
+  */
+.bg-rays {
+  > div {
+    display: inline-block;
+    background-color: rgb(map-get($colors, bluelavanda), 50%);
+    width: 50%;
+    height: 1.5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: right;
+
+    @for $n from 1 through 30 {
+      &:nth-child(#{$n}) {
+        $left: random() * 10%;
+        transform: rotate($n * 0.05turn + random() * 0.05);
+        width: 50% - $left;
+        left: $left;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 100%;
+      background-color: rgb(map-get($colors, bluelavanda), 50%);
+      position: absolute;
+      top: 50%;
+      left: -9px;
+      transform: translateY(-50%);
+    }
+  }
+}

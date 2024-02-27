@@ -1,0 +1,24 @@
+@use "sass:list";
+@use "sass:map";
+
+.event-feed {
+  background-color:#f8f9fa;
+  //--------------------------------------------------
+  //@media (min-width: 768px) {
+  //  background-color: rgb(97, 150, 150);
+  // }
+  // @media (min-width: 992px) {
+  // background-color: rgb(46, 113, 113);
+  // }
+  // --------------------------------------------------
+  // @media (min-width: #{list.nth( $breakpoints,1)}) {
+  //   background-color: rgb(106, 215, 51);
+  //  }
+  //  @media (min-width:#{list.nth($breakpoints,2)}) {
+  //   background-color: rgb(21, 166, 147);
+  // }
+  // @media (min-width: #{list.nth($breakpoints,3)}) {
+  //   background-color: rgb(57, 65, 179);
+  // }
+  // --------------------------------------------------
+}

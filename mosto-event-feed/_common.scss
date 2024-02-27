@@ -1,0 +1,57 @@
+@use "sass:map";
+.container {
+  width: 100%;
+  padding: $spacer * 10 $spacer;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  font-family: $font;
+  box-sizing: border-box;
+
+  //----------------------------------------------------------
+  // @media (min-width: #{map.get($breakpoints,"sm")}) {
+  //   width: calc(map.get($breakpoints, "sm") - 4 * $spacer);
+  // }
+  // @media (min-width: #{map.get($breakpoints, "md")}) {
+  //   width: calc(map.get($breakpoints, "md") - 6 * $spacer);
+  // }
+  // @media (min-width: #{map.get($breakpoints, "lg")}) {
+  //   width: calc(map.get($breakpoints, "lg") - 8 * $spacer);
+  // }
+  //-----------------------------------------------------------
+
+  //cicle
+  $n: 4;
+  @each $bp, $width in $breakpoints {
+    // 1. loop as mane times as values
+    // 2. copy values -> variables
+
+    @media (min-width: #{$width}) {
+      width: calc($width - $n * $spacer);
+    }
+    $n: $n + 2;
+  }
+}
+
+.gradient {
+  background-image: linear-gradient(
+      90deg,
+      rgb(map-get($colors, _dark), 15%) 0,
+      rgb(map-get($colors, _light), 15%) 4%,
+      rgb(map-get($colors, _light), 15%) 96%,
+      rgb(map-get($colors, _dark), 15%) 100%
+    ),
+    linear-gradient(map-get($colors, pinkviolet), map-get($colors, bluevioleta));
+}
+.rounding {
+  border-radius: 1.5em;
+}
+.d-flex {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.flex-sm-column {
+  @media (max-width: map-get($breakpoints, sm)) {
+    flex-direction: column;
+  }
+}
